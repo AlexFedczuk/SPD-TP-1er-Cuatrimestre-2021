@@ -1,0 +1,66 @@
+#include<LiquidCrystal.h>
+
+LiquidCrystal lcd(2, 3, 4, 7, 8, 12);
+
+/*NINGUN BOTON = 1023
+  BOTON 1 512
+  BOTON 2 682
+  BOTON 3 767
+  BOTON 4 818
+  BOTON 5 852
+  BOTON 6 877
+*/
+#define BOTON_ARRIBA 512
+#define BOTON_IZ 682
+#define BOTON_MEDIO 818 
+#define BOTON_DE 767
+#define BOTON_ABAJO_IZ 852
+#define BOTON_ABAJO_DE 877
+
+#define LED_BLANCO 5
+#define LED_AMARILLO_IZ 11
+#define LED_AMARILLO_DE 6
+#define LED_ROJO_IZ 10
+#define LED_ROJO_DE 9
+
+void setup()
+{
+  lcd.begin(16, 2);  
+  
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(5, OUTPUT);
+  
+  Serial.begin(9600);
+}
+
+int btnValor;
+
+void loop()
+{
+  int valorfotoresitor = analogRead(A1);
+  Serial.println(analogRead(A1));
+  btnValor = analogRead(A0);
+  switch(btnValor)
+  {
+   case BOTON_ARRIBA: 
+    
+    break;
+    case BOTON_IZ:
+    break;
+   	case BOTON_MEDIO:    
+    break;
+    case BOTON_DE:
+    break;
+   	case BOTON_ABAJO_IZ:
+    break;
+    case BOTON_ABAJO_DE:
+    break;
+    default:
+    break;
+  }
+    
+  delay(50);
+}
